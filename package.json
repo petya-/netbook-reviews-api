@@ -1,0 +1,56 @@
+{
+  "name": "netbook-reviews-api",
+  "version": "1.0.0",
+  "description": "Netbook API for book reviews",
+  "keywords": [
+    "netbook-reviews-application",
+    "netbook"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "scripts": {
+    "build": "tsc --outDir dist --target es2017",
+    "build:watch": "tsc --outDir dist --target es2017 --watch",
+    "clean": "rimraf dist",
+    "pretest": "npm run clean && npm run build",
+    "migrate": "node ./dist/migrate",
+    "start": "npm run build && node .",
+    "prepare": "npm run build",
+    "start:watch": "tsc-watch --target es2017 --outDir ./dist --onSuccess \"node .\""
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "",
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.ts",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^1.2.2",
+    "@loopback/context": "^1.12.0",
+    "@loopback/core": "^1.5.0",
+    "@loopback/openapi-v3": "^1.3.6",
+    "@loopback/repository": "^1.5.0",
+    "@loopback/rest": "^1.10.3",
+    "@loopback/rest-explorer": "^1.1.17",
+    "@types/jest": "^24.0.11",
+    "@types/mocha": "^5.2.6",
+    "loopback-connector-mongodb": "^4.1.0"
+  },
+  "devDependencies": {
+    "@loopback/testlab": "^1.2.5",
+    "@types/node": "^10.11.2",
+    "nodemon": "^1.18.11",
+    "rimraf": "^2.6.2",
+    "tsc-watch": "^2.1.2",
+    "typescript": "^3.4.3"
+  }
+}

@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const testlab_1 = require("@loopback/testlab");
 const test_helper_1 = require("./test-helper");
-describe('PingController', () => {
+describe('ReviewController', () => {
     let app;
     let client;
     before('setupApplication', async () => {
@@ -11,9 +10,9 @@ describe('PingController', () => {
     after(async () => {
         await app.stop();
     });
-    it('invokes GET /reviews', async () => {
-        const res = await client.get('/reviews').expect(200);
-        testlab_1.expect(res.body).to.containEql([]);
-    });
+    // it('invokes GET /reviews', async () => {
+    //   const res = await client.get('/reviews').expect(200);
+    //   expect(res.body).to.equal([]);
+    // });
 });
 //# sourceMappingURL=review.controller.acceptance.js.map

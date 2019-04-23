@@ -18,7 +18,8 @@
     "migrate": "node ./dist/migrate",
     "start": "npm run build && node .",
     "prepare": "npm run build",
-    "start:watch": "tsc-watch --target es2017 --outDir ./dist --onSuccess \"node .\""
+    "start:watch": "tsc-watch --target es2017 --outDir ./dist --onSuccess \"node .\"",
+    "test": "mocha --recursive \"dist/__tests__\""
   },
   "repository": {
     "type": "git"
@@ -48,6 +49,7 @@
   "devDependencies": {
     "@loopback/testlab": "^1.2.5",
     "@types/node": "^10.11.2",
+    "mocha": "^6.1.4",
     "nodemon": "^1.18.11",
     "rimraf": "^2.6.2",
     "tsc-watch": "^2.1.2",

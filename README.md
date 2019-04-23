@@ -18,9 +18,9 @@ For building and running the application you need:
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of commands to get you up and running 
 
-Say what the step will be
+Install the needed dependencies with:
 
 ```
 npm install

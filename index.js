@@ -8,7 +8,9 @@ const Eureka = require('eureka-js-client').Eureka;
 
 const eureka = new Eureka({
   instance: {
-    app: 'reviewsService',
+    id: 'reviews-service',
+    instanceId: 'reviews-service',
+    app: 'REVIEWS-SERVICE',
     hostName: 'localhost',
     ipAddr: '127.0.0.1',
     statusPageUrl: 'http://localhost:3000',
@@ -16,7 +18,7 @@ const eureka = new Eureka({
       '$': 3000,
       '@enabled': 'true',
     },
-    vipAddress: 'localhost',
+    vipAddress: 'reviews-service',
     dataCenterInfo: {
       '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
       name: 'MyOwn',
@@ -28,6 +30,7 @@ const eureka = new Eureka({
     servicePath: '/eureka/apps/'
   }
 });
+
 eureka.logger.level('debug');
 eureka.start(function (error) {
   console.log(error || 'complete');

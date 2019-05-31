@@ -1,39 +1,39 @@
-const application = require('./dist');
+const application = require("./dist");
 
 module.exports = application;
 
 // ------------------ Eureka Config --------------------------------------------
 
-const Eureka = require('eureka-js-client').Eureka;
+const Eureka = require("eureka-js-client").Eureka;
 
 const eureka = new Eureka({
   instance: {
-    id: 'reviews-service',
-    instanceId: 'reviews-service',
-    app: 'REVIEWS-SERVICE',
-    hostName: 'localhost',
-    ipAddr: '127.0.0.1',
-    statusPageUrl: 'http://localhost:3000',
+    id: "reviews-service",
+    instanceId: "reviews-service",
+    app: "REVIEWS-SERVICE",
+    hostName: "localhost",
+    ipAddr: "127.0.0.1",
+    statusPageUrl: "http://localhost:3000",
     port: {
-      '$': 3000,
-      '@enabled': 'true',
+      $: 3000,
+      "@enabled": "true"
     },
-    vipAddress: 'reviews-service',
+    vipAddress: "reviews-service",
     dataCenterInfo: {
-      '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
-      name: 'MyOwn',
+      "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+      name: "MyOwn"
     }
   },
   eureka: {
-    host: 'localhost',
+    host: "localhost",
     port: 8761,
-    servicePath: '/eureka/apps/'
+    servicePath: "/eureka/apps/"
   }
 });
 
-eureka.logger.level('debug');
-eureka.start(function (error) {
-  console.log(error || 'complete');
+eureka.logger.level("debug");
+eureka.start(function(error) {
+  console.log(error || "complete");
 });
 
 // ------------------ Server Config --------------------------------------------
@@ -46,12 +46,15 @@ if (require.main === module) {
       host: process.env.HOST,
       openApiSpec: {
         // useful when used with OASGraph to locate your application
-        setServersFromRequest: true,
+        setServersFromRequest: true
       },
-    },
+      cors: {
+        origin: ""
+      }
+    }
   };
   application.main(config).catch(err => {
-    console.error('Cannot start the application.', err);
+    console.error("Cannot start the application.", err);
     process.exit(1);
   });
 }

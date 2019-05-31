@@ -1,6 +1,6 @@
-import { Count, Filter, Where } from '@loopback/repository';
-import { Review } from '../models';
-import { ReviewRepository } from '../repositories';
+import { Count, Filter, Where } from "@loopback/repository";
+import { Review } from "../models";
+import { ReviewRepository } from "../repositories";
 export declare class ReviewController {
     reviewRepository: ReviewRepository;
     constructor(reviewRepository: ReviewRepository);

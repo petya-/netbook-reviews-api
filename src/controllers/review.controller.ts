@@ -3,8 +3,8 @@ import {
   CountSchema,
   Filter,
   repository,
-  Where,
-} from '@loopback/repository';
+  Where
+} from "@loopback/repository";
 import {
   post,
   param,
@@ -14,124 +14,124 @@ import {
   patch,
   put,
   del,
-  requestBody,
-} from '@loopback/rest';
-import {Review} from '../models';
-import {ReviewRepository} from '../repositories';
+  requestBody
+} from "@loopback/rest";
+import { Review } from "../models";
+import { ReviewRepository } from "../repositories";
 
 export class ReviewController {
   constructor(
     @repository(ReviewRepository)
-    public reviewRepository : ReviewRepository,
+    public reviewRepository: ReviewRepository
   ) {}
 
-  @post('/reviews', {
+  @post("/reviews", {
     responses: {
-      '200': {
-        description: 'Review model instance',
-        content: {'application/json': {schema: {'x-ts-type': Review}}},
-      },
-    },
+      "200": {
+        description: "Review model instance",
+        content: { "application/json": { schema: { "x-ts-type": Review } } }
+      }
+    }
   })
   async create(@requestBody() review: Review): Promise<Review> {
     return await this.reviewRepository.create(review);
   }
 
-  @get('/reviews/count', {
+  @get("/reviews/count", {
     responses: {
-      '200': {
-        description: 'Review model count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
+      "200": {
+        description: "Review model count",
+        content: { "application/json": { schema: CountSchema } }
+      }
+    }
   })
   async count(
-    @param.query.object('where', getWhereSchemaFor(Review)) where?: Where,
+    @param.query.object("where", getWhereSchemaFor(Review)) where?: Where
   ): Promise<Count> {
     return await this.reviewRepository.count(where);
   }
 
-  @get('/reviews', {
+  @get("/reviews", {
     responses: {
-      '200': {
-        description: 'Array of Review model instances',
+      "200": {
+        description: "Array of Review model instances",
         content: {
-          'application/json': {
-            schema: {type: 'array', items: {'x-ts-type': Review}},
-          },
-        },
-      },
-    },
+          "application/json": {
+            schema: { type: "array", items: { "x-ts-type": Review } }
+          }
+        }
+      }
+    }
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(Review)) filter?: Filter,
+    @param.query.object("filter", getFilterSchemaFor(Review)) filter?: Filter
   ): Promise<Review[]> {
     return await this.reviewRepository.find(filter);
   }
 
-  @patch('/reviews', {
+  @patch("/reviews", {
     responses: {
-      '200': {
-        description: 'Review PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
+      "200": {
+        description: "Review PATCH success count",
+        content: { "application/json": { schema: CountSchema } }
+      }
+    }
   })
   async updateAll(
     @requestBody() review: Review,
-    @param.query.object('where', getWhereSchemaFor(Review)) where?: Where,
+    @param.query.object("where", getWhereSchemaFor(Review)) where?: Where
   ): Promise<Count> {
     return await this.reviewRepository.updateAll(review, where);
   }
 
-  @get('/reviews/{id}', {
+  @get("/reviews/{id}", {
     responses: {
-      '200': {
-        description: 'Review model instance',
-        content: {'application/json': {schema: {'x-ts-type': Review}}},
-      },
-    },
+      "200": {
+        description: "Review model instance",
+        content: { "application/json": { schema: { "x-ts-type": Review } } }
+      }
+    }
   })
-  async findById(@param.path.number('id') id: number): Promise<Review> {
+  async findById(@param.path.number("id") id: number): Promise<Review> {
     return await this.reviewRepository.findById(id);
   }
 
-  @patch('/reviews/{id}', {
+  @patch("/reviews/{id}", {
     responses: {
-      '204': {
-        description: 'Review PATCH success',
-      },
-    },
+      "204": {
+        description: "Review PATCH success"
+      }
+    }
   })
   async updateById(
-    @param.path.number('id') id: number,
-    @requestBody() review: Review,
+    @param.path.number("id") id: number,
+    @requestBody() review: Review
   ): Promise<void> {
     await this.reviewRepository.updateById(id, review);
   }
 
-  @put('/reviews/{id}', {
+  @put("/reviews/{id}", {
     responses: {
-      '204': {
-        description: 'Review PUT success',
-      },
-    },
+      "204": {
+        description: "Review PUT success"
+      }
+    }
   })
   async replaceById(
-    @param.path.number('id') id: number,
-    @requestBody() review: Review,
+    @param.path.number("id") id: number,
+    @requestBody() review: Review
   ): Promise<void> {
     await this.reviewRepository.replaceById(id, review);
   }
 
-  @del('/reviews/{id}', {
+  @del("/reviews/{id}", {
     responses: {
-      '204': {
-        description: 'Review DELETE success',
-      },
-    },
+      "204": {
+        description: "Review DELETE success"
+      }
+    }
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(@param.path.number("id") id: number): Promise<void> {
     await this.reviewRepository.deleteById(id);
   }
 }

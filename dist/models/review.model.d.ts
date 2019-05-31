@@ -1,6 +1,6 @@
-import { Entity } from '@loopback/repository';
+import { Entity } from "@loopback/repository";
 export declare class Review extends Entity {
-    id: number;
+    _id?: string;
     content: string;
     name: string;
     ISBN: string;

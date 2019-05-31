@@ -46,13 +46,13 @@ let ReviewController = class ReviewController {
     }
 };
 __decorate([
-    rest_1.post("/reviews", {
+    rest_1.post('/reviews', {
         responses: {
-            "200": {
-                description: "Review model instance",
-                content: { "application/json": { schema: { "x-ts-type": models_1.Review } } }
-            }
-        }
+            '200': {
+                description: 'Review model instance',
+                content: { 'application/json': { schema: { 'x-ts-type': models_1.Review } } },
+            },
+        },
     }),
     __param(0, rest_1.requestBody()),
     __metadata("design:type", Function),
@@ -60,105 +60,105 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ReviewController.prototype, "create", null);
 __decorate([
-    rest_1.get("/reviews/count", {
+    rest_1.get('/reviews/count', {
         responses: {
-            "200": {
-                description: "Review model count",
-                content: { "application/json": { schema: repository_1.CountSchema } }
-            }
-        }
+            '200': {
+                description: 'Review model count',
+                content: { 'application/json': { schema: repository_1.CountSchema } },
+            },
+        },
     }),
-    __param(0, rest_1.param.query.object("where", rest_1.getWhereSchemaFor(models_1.Review))),
+    __param(0, rest_1.param.query.object('where', rest_1.getWhereSchemaFor(models_1.Review))),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ReviewController.prototype, "count", null);
 __decorate([
-    rest_1.get("/reviews", {
+    rest_1.get('/reviews', {
         responses: {
-            "200": {
-                description: "Array of Review model instances",
+            '200': {
+                description: 'Array of Review model instances',
                 content: {
-                    "application/json": {
-                        schema: { type: "array", items: { "x-ts-type": models_1.Review } }
-                    }
-                }
-            }
-        }
+                    'application/json': {
+                        schema: { type: 'array', items: { 'x-ts-type': models_1.Review } },
+                    },
+                },
+            },
+        },
     }),
-    __param(0, rest_1.param.query.object("filter", rest_1.getFilterSchemaFor(models_1.Review))),
+    __param(0, rest_1.param.query.object('filter', rest_1.getFilterSchemaFor(models_1.Review))),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ReviewController.prototype, "find", null);
 __decorate([
-    rest_1.patch("/reviews", {
+    rest_1.patch('/reviews', {
         responses: {
-            "200": {
-                description: "Review PATCH success count",
-                content: { "application/json": { schema: repository_1.CountSchema } }
-            }
-        }
+            '200': {
+                description: 'Review PATCH success count',
+                content: { 'application/json': { schema: repository_1.CountSchema } },
+            },
+        },
     }),
     __param(0, rest_1.requestBody()),
-    __param(1, rest_1.param.query.object("where", rest_1.getWhereSchemaFor(models_1.Review))),
+    __param(1, rest_1.param.query.object('where', rest_1.getWhereSchemaFor(models_1.Review))),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [models_1.Review, Object]),
     __metadata("design:returntype", Promise)
 ], ReviewController.prototype, "updateAll", null);
 __decorate([
-    rest_1.get("/reviews/{id}", {
+    rest_1.get('/reviews/{id}', {
         responses: {
-            "200": {
-                description: "Review model instance",
-                content: { "application/json": { schema: { "x-ts-type": models_1.Review } } }
-            }
-        }
+            '200': {
+                description: 'Review model instance',
+                content: { 'application/json': { schema: { 'x-ts-type': models_1.Review } } },
+            },
+        },
     }),
-    __param(0, rest_1.param.path.number("id")),
+    __param(0, rest_1.param.path.string('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ReviewController.prototype, "findById", null);
 __decorate([
-    rest_1.patch("/reviews/{id}", {
+    rest_1.patch('/reviews/{id}', {
         responses: {
-            "204": {
-                description: "Review PATCH success"
-            }
-        }
+            '204': {
+                description: 'Review PATCH success',
+            },
+        },
     }),
-    __param(0, rest_1.param.path.number("id")),
+    __param(0, rest_1.param.path.string('id')),
     __param(1, rest_1.requestBody()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, models_1.Review]),
+    __metadata("design:paramtypes", [String, models_1.Review]),
     __metadata("design:returntype", Promise)
 ], ReviewController.prototype, "updateById", null);
 __decorate([
-    rest_1.put("/reviews/{id}", {
+    rest_1.put('/reviews/{id}', {
         responses: {
-            "204": {
-                description: "Review PUT success"
-            }
-        }
+            '204': {
+                description: 'Review PUT success',
+            },
+        },
     }),
-    __param(0, rest_1.param.path.number("id")),
+    __param(0, rest_1.param.path.string('id')),
     __param(1, rest_1.requestBody()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, models_1.Review]),
+    __metadata("design:paramtypes", [String, models_1.Review]),
     __metadata("design:returntype", Promise)
 ], ReviewController.prototype, "replaceById", null);
 __decorate([
-    rest_1.del("/reviews/{id}", {
+    rest_1.del('/reviews/{id}', {
         responses: {
-            "204": {
-                description: "Review DELETE success"
-            }
-        }
+            '204': {
+                description: 'Review DELETE success',
+            },
+        },
     }),
-    __param(0, rest_1.param.path.number("id")),
+    __param(0, rest_1.param.path.string('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ReviewController.prototype, "deleteById", null);
 ReviewController = __decorate([

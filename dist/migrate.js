@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const application_1 = require("./application");
 async function migrate(args) {
-    const existingSchema = args.includes('--rebuild') ? 'drop' : 'alter';
-    console.log('Migrating schemas (%s existing schema)', existingSchema);
+    const existingSchema = args.includes("--rebuild") ? "drop" : "alter";
+    console.log("Migrating schemas (%s existing schema)", existingSchema);
     const app = new application_1.NetbookReviewsApplication();
     await app.boot();
     await app.migrateSchema({ existingSchema });
@@ -14,7 +14,7 @@ async function migrate(args) {
 }
 exports.migrate = migrate;
 migrate(process.argv).catch(err => {
-    console.error('Cannot migrate database schema', err);
+    console.error("Cannot migrate database schema", err);
     process.exit(1);
 });
 //# sourceMappingURL=migrate.js.map

@@ -5,7 +5,7 @@ import {inject} from '@loopback/core';
 
 export class ReviewRepository extends DefaultCrudRepository<
   Review,
-  typeof Review.prototype.id
+  typeof Review.prototype._id
 > {
   constructor(
     @inject('datasources.db') dataSource: DbDataSource,

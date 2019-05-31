@@ -17,41 +17,41 @@ let Review = class Review extends repository_1.Entity {
 };
 __decorate([
     repository_1.property({
-        id: true,
-        description: 'The unique identifier for a review',
+        type: "string",
+        id: true
     }),
-    __metadata("design:type", Number)
-], Review.prototype, "id", void 0);
+    __metadata("design:type", String)
+], Review.prototype, "_id", void 0);
 __decorate([
     repository_1.property({
-        type: 'string',
-        required: true,
+        type: "string",
+        required: true
     }),
     __metadata("design:type", String)
 ], Review.prototype, "content", void 0);
 __decorate([
     repository_1.property({
-        type: 'string',
-        required: true,
+        type: "string",
+        required: true
     }),
     __metadata("design:type", String)
 ], Review.prototype, "name", void 0);
 __decorate([
     repository_1.property({
-        type: 'string',
-        required: true,
+        type: "string",
+        required: true
     }),
     __metadata("design:type", String)
 ], Review.prototype, "ISBN", void 0);
 __decorate([
     repository_1.property({
-        type: 'number',
-        required: true,
+        type: "number",
+        required: true
     }),
     __metadata("design:type", Number)
 ], Review.prototype, "authorId", void 0);
 Review = __decorate([
-    repository_1.model(),
+    repository_1.model({ settings: {} }),
     __metadata("design:paramtypes", [Object])
 ], Review);
 exports.Review = Review;

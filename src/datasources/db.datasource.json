@@ -1,8 +1,8 @@
 {
   "name": "db",
   "connector": "mongodb",
-  "url": "",
-  "host": "localhost",
+  "url": "mongodb+srv://root:2seTdKamnf6KMZ2@cluster0-eripv.azure.mongodb.net/test?retryWrites=true&w=majority",
+  "host": "",
   "port": 27017,
   "user": "",
   "password": "",

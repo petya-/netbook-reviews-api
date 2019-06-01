@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const test_helper_1 = require("./test-helper");
-describe('ReviewController', () => {
+describe("ReviewController", () => {
     let app;
     let client;
-    before('setupApplication', async () => {
+    before("setupApplication", async () => {
         ({ app, client } = await test_helper_1.setupApplication());
     });
     after(async () => {

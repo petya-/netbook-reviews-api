@@ -1,6 +1,6 @@
 # netbook-reviews-api
 
-[![LoopBack](https://github.com/strongloop/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
+[![LoopBack](<https://github.com/strongloop/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png>)](http://loopback.io/)
 
 Netbook Reviews API contains all the user reviews for books from the Netbook App.
 
@@ -18,7 +18,9 @@ For building and running the application you need:
 
 ### Installing
 
-A step by step series of commands to get you up and running 
+A step by step series of commands to get you up and running
+
+## Locally
 
 Install the needed dependencies with:
 
@@ -33,11 +35,18 @@ npm start
 ```
 
 To start the application in dev mode run:
+
 ```
 npm run start:watch
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+## Docker
+
+Run the following command in the project root:
+
+```
+docker-compose up
+```
 
 ## Running the tests
 
@@ -46,4 +55,3 @@ To run the tests, run:
 ```
 npm test
 ```
-

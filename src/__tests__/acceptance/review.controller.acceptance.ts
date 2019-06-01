@@ -1,13 +1,13 @@
-import {Client, expect} from '@loopback/testlab';
-import {NetbookReviewsApplication} from '../..';
-import {setupApplication} from './test-helper';
+import { Client, expect } from "@loopback/testlab";
+import { NetbookReviewsApplication } from "../..";
+import { setupApplication } from "./test-helper";
 
-describe('ReviewController', () => {
+describe("ReviewController", () => {
   let app: NetbookReviewsApplication;
   let client: Client;
 
-  before('setupApplication', async () => {
-    ({app, client} = await setupApplication());
+  before("setupApplication", async () => {
+    ({ app, client } = await setupApplication());
   });
 
   after(async () => {

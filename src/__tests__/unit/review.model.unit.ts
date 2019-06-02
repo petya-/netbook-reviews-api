@@ -2,50 +2,50 @@ import { Review } from "../../models";
 import { givenReviewData } from "../../helpers/database.helpers";
 import { expect } from "@loopback/testlab";
 
-describe("Person (unit)", () => {
+describe("Review (unit)", () => {
   // we recommend to group tests by method names
   describe("getFullName()", () => {
     it("Sets review name correctly", () => {
-      const person = givenReview({
+      const review = givenReview({
         name: "Best book",
         content: "ever",
         authorId: 1
       });
 
-      expect(person.name).to.equal("Best book");
+      expect(review.name).to.equal("Best book");
     });
 
     it("Sets review content correctly", () => {
-      const person = givenReview({
+      const review = givenReview({
         name: "Best book",
         content: "ever",
         ISBN: "123jsdfjs",
         authorId: 1
       });
 
-      expect(person.content).to.equal("ever");
+      expect(review.content).to.equal("ever");
     });
 
     it("Sets review ISBN correctly", () => {
-      const person = givenReview({
+      const review = givenReview({
         name: "Best book",
         content: "ever",
         ISBN: "123jsdfjs",
         authorId: 1
       });
 
-      expect(person.content).to.equal("ever");
+      expect(review.content).to.equal("ever");
     });
 
     it("Sets review authorId correctly", () => {
-      const person = givenReview({
+      const review = givenReview({
         name: "Best book",
         content: "ever",
         ISBN: "123jsdfjs",
         authorId: 1
       });
 
-      expect(person.ISBN).to.equal("123jsdfjs");
+      expect(review.ISBN).to.equal("123jsdfjs");
     });
   });
 

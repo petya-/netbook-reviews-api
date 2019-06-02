@@ -19,7 +19,7 @@
     "start": "npm run build && node .",
     "prepare": "npm run build",
     "start:watch": "tsc-watch --target es2017 --outDir ./dist --onSuccess \"node .\"",
-    "test": "mocha --recursive \"dist/__tests__\""
+    "test": "mocha --recursive \"dist/__tests__\" "
   },
   "repository": {
     "type": "git"

@@ -29,5 +29,21 @@ describe("Product (acceptance)", () => {
         // assert
         testlab_1.expect(response.body).to.containEql(expected);
     });
+    it("retrieves reviews", async () => {
+        // arrange
+        const review = await database_helpers_1.givenReview({
+            name: "Best book",
+            content: "Best book i ever read",
+            ISBN: "ISBN1234",
+            authorId: 1
+        });
+        const expected = Object.assign({
+            _id: review._id
+        }, review);
+        // act
+        const response = await client.get(`/reviews/`);
+        // assert
+        testlab_1.expect(response.body).to.containEql(expected);
+    });
 });
 //# sourceMappingURL=review.controller.acceptance.js.map

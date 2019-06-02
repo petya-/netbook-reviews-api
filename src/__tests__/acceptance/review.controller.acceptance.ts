@@ -20,7 +20,7 @@ describe("Product (acceptance)", () => {
     await app.stop();
   });
 
-  it("retrieves review details", async () => {
+  it("Should retrieve review details", async () => {
     // arrange
     const review = await givenReview({
       name: "Best book",
@@ -37,6 +37,28 @@ describe("Product (acceptance)", () => {
 
     // act
     const response = await client.get(`/reviews/${review._id}`);
+
+    // assert
+    expect(response.body).to.containEql(expected);
+  });
+
+  it("Should retrieve reviews", async () => {
+    // arrange
+    const review = await givenReview({
+      name: "Best book",
+      content: "Best book i ever read",
+      ISBN: "ISBN1234",
+      authorId: 1
+    });
+    const expected = Object.assign(
+      {
+        _id: review._id
+      },
+      review
+    );
+
+    // act
+    const response = await client.get(`/reviews/`);
 
     // assert
     expect(response.body).to.containEql(expected);

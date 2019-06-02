@@ -6,7 +6,7 @@ import {
   givenReview
 } from "../../helpers/database.helpers";
 
-describe("Review (acceptance)", () => {
+describe("Review   (acceptance)", () => {
   let app: NetbookReviewsApplication;
   let client: Client;
 

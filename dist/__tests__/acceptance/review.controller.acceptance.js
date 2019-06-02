@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const testlab_1 = require("@loopback/testlab");
 const test_helper_1 = require("./test-helper");
 const database_helpers_1 = require("../../helpers/database.helpers");
-describe("Review (acceptance)", () => {
+describe("Review   (acceptance)", () => {
     let app;
     let client;
     before("setupApplication", async () => {

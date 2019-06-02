@@ -13,7 +13,7 @@ describe("Product (acceptance)", () => {
     after(async () => {
         await app.stop();
     });
-    it("retrieves review details", async () => {
+    it("Should retrieve review details", async () => {
         // arrange
         const review = await database_helpers_1.givenReview({
             name: "Best book",
@@ -29,7 +29,7 @@ describe("Product (acceptance)", () => {
         // assert
         testlab_1.expect(response.body).to.containEql(expected);
     });
-    it("retrieves reviews", async () => {
+    it("Should retrieve reviews", async () => {
         // arrange
         const review = await database_helpers_1.givenReview({
             name: "Best book",
